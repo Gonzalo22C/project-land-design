@@ -1,0 +1,688 @@
+/* ==========================================================================
+   SIFO STUDIO — HOJA DE ESTILOS PRINCIPAL (estilos.css)
+   ========================================================================== */
+
+:root {
+    /* COLORES PRINCIPALES */
+    --fondo-principal: #f8fafc;
+    --fondo-secundario: #eef4fb;
+    --fondo-oscuro: #0b132b;
+
+    /* COLORES DE IDENTIDAD */
+    --baby-blue: #a8d8ff;
+    --indigo-navy: #14213d;
+    --color-acento: #ff7a1a;
+
+    /* TIPOGRAFÍA */
+    --letras-h1: #0b132b;
+    --letras-h2: #14213d;
+    --letras-h3: #14213d;
+    --letras-parrafos: #334155;
+    --letras-secundarias: #64748b;
+
+    /* TARJETAS Y COMPONENTES */
+    --fondo-cards: #ffffff;
+    --borde-cards: #dbe6f2;
+    --fondo-botones: var(--indigo-navy);
+    --texto-botones: #ffffff;
+
+    /* OTROS ELEMENTOS */
+    --color-navbar: rgba(255, 255, 255, 0.92);
+    --color-footer: #0b132b;
+    --color-hover: #e8f3ff;
+    --color-bordes: #cbd5e1;
+
+    /* VARIABLES COMPLEMENTARIAS DE APOYO */
+    --baby-blue-suave: #e6f3ff;
+    --texto-sobre-oscuro: #f1f5f9;
+    --texto-muted-oscuro: #94a3b8;
+    --borde-oscuro: rgba(168, 216, 255, 0.16);
+    --estado-disponible: #16a34a;
+    --estado-disponible-fondo: rgba(0, 255, 94, 0.12);
+    --fuente-principal: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --fuente-display: "Syne", "Plus Jakarta Sans", "Montserrat", system-ui, sans-serif;
+    --radio-sm: 8px;
+    --radio-md: 16px;
+    --radio-lg: 24px;
+    --radio-pill: 999px;
+    --sombra-suave: 0 10px 30px rgba(20, 33, 61, 0.06);
+    --sombra-elevada: 0 18px 40px rgba(20, 33, 61, 0.1);
+    --transicion-base: 0.25s ease;
+}
+
+/* ==========================================================================
+   RESET Y ESTILOS BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--letras-parrafos);
+    background-color: var(--fondo-principal);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transicion-base), background-color var(--transicion-base), border-color var(--transicion-base), transform var(--transicion-base), box-shadow var(--transicion-base);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN
+   ========================================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-navbar);
+    border-bottom: 1px solid var(--color-bordes);
+    backdrop-filter: blur(10px);
+}
+
+.barra-nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.logo {
+    font-family: var(--fuente-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
+    color: var(--indigo-navy);
+    padding: 0.35rem 0.6rem;
+    border-radius: var(--radio-sm);
+}
+
+.logo:hover {
+    color: var(--color-acento);
+    background-color: var(--color-hover);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--letras-parrafos);
+    padding: 0.55rem 1.05rem;
+    border-radius: var(--radio-pill);
+}
+
+.menu a:hover {
+    color: var(--indigo-navy);
+    background-color: var(--color-hover);
+}
+
+.menu a.activo {
+    background-color: var(--fondo-botones);
+    color: var(--texto-botones);
+    font-weight: 600;
+}
+
+.menu a.activo:hover {
+    background-color: var(--color-acento);
+    color: var(--texto-botones);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+    background: linear-gradient(180deg, var(--baby-blue) 0%, var(--baby-blue-suave) 55%, var(--fondo-principal) 100%);
+    padding: 5.5rem 1.5rem 4.5rem;
+    text-align: center;
+}
+
+.hero h1 {
+    max-width: 820px;
+    margin: 0 auto 1.5rem;
+    font-family: var(--fuente-display);
+    font-size: clamp(2.35rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    color: var(--letras-h1);
+}
+
+.hero h1 span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--indigo-navy);
+    background: linear-gradient(90deg, var(--indigo-navy) 0%, var(--color-acento) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 580px;
+    margin: 0 auto 2.25rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--letras-parrafos);
+}
+
+.hero-botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-botones a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.75rem;
+    border-radius: var(--radio-pill);
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.hero-botones a:first-child {
+    background-color: var(--fondo-botones);
+    color: var(--texto-botones);
+    border: 1px solid var(--fondo-botones);
+    box-shadow: var(--sombra-suave);
+}
+
+.hero-botones a:first-child:hover {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.hero-botones a:last-child {
+    background-color: var(--fondo-cards);
+    color: var(--indigo-navy);
+    border: 1px solid var(--color-bordes);
+}
+
+.hero-botones a:last-child:hover {
+    background-color: var(--color-hover);
+    border-color: var(--indigo-navy);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CONTENEDOR GENERAL Y SECCIÓN DE ETAPAS
+   ========================================================================== */
+
+.contenedor {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+}
+
+.etapas {
+    background-color: var(--fondo-secundario);
+    max-width: none;
+    padding: 5rem 1.5rem;
+    border-top: 1px solid var(--borde-cards);
+    border-bottom: 1px solid var(--borde-cards);
+}
+
+.etapas h2 {
+    max-width: 1180px;
+    margin: 0 auto 0.5rem;
+    font-family: var(--fuente-display);
+    font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--letras-h2);
+    text-align: center;
+}
+
+.etapas > span {
+    display: block;
+    max-width: 1180px;
+    margin: 0 auto 3rem;
+    font-size: 1rem;
+    color: var(--letras-secundarias);
+    text-align: center;
+}
+
+.cards-etapas {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+}
+
+.grid {
+    background-color: var(--fondo-cards);
+    border: 1px solid var(--borde-cards);
+    border-radius: var(--radio-md);
+    padding: 1.25rem;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transicion-base), box-shadow var(--transicion-base), border-color var(--transicion-base);
+}
+
+.grid:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-elevada);
+    border-color: var(--baby-blue);
+}
+
+.grid img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--radio-sm);
+    margin-bottom: 1.25rem;
+    background-color: var(--baby-blue-suave);
+}
+
+.grid h3 {
+    font-family: var(--fuente-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--letras-h3);
+    margin-bottom: 0.45rem;
+}
+
+.grid p {
+    font-size: 0.96rem;
+    color: var(--letras-parrafos);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   CARRUSEL HORIZONTAL DE ESPECIALIDADES
+   ========================================================================== */
+
+.contenerdo-barra-carrusel {
+    background-color: var(--fondo-oscuro);
+    border-top: 1px solid var(--borde-oscuro);
+    border-bottom: 1px solid var(--borde-oscuro);
+    overflow: hidden;
+}
+
+.carrusel {
+    width: 100%;
+    overflow: hidden;
+    padding: 1.4rem 0;
+}
+
+.carrusel-contenido {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+    animation: desplazamiento-carrusel 15s linear infinite;
+}
+
+.carrusel:hover .carrusel-contenido {
+    animation-play-state: paused;
+}
+
+.carrusel-contenido span {
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+    font-family: var(--fuente-display);
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--texto-sobre-oscuro);
+    white-space: nowrap;
+}
+
+.carrusel-contenido span::after {
+    content: "•";
+    color: var(--color-acento);
+    font-size: 1.2rem;
+}
+
+@keyframes desplazamiento-carrusel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   CTA DE CONTACTO E INDICADOR DE DISPONIBILIDAD
+   ========================================================================== */
+
+.contacto {
+    padding-top: 5rem;
+    padding-bottom: 5.5rem;
+}
+
+.cta-contacto {
+    position: relative;
+    background: linear-gradient(135deg, var(--fondo-cards) 0%, var(--baby-blue-suave) 100%);
+    border: 1px solid var(--borde-cards);
+    border-radius: var(--radio-lg);
+    padding: 3rem;
+    box-shadow: var(--sombra-elevada);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+/* Indicador tipo píldora "Disponibles para empezar" */
+.cta-contacto > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radio-pill);
+    background-color: var(--estado-disponible-fondo);
+    border: 1px solid rgba(22, 163, 74, 0.25);
+    color: var(--indigo-navy);
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.cta-contacto > span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--estado-disponible);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+    flex-shrink: 0;
+}
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1.4fr auto;
+    grid-template-areas:
+        "titulo boton"
+        "texto boton";
+    align-items: center;
+    gap: 0.75rem 2.5rem;
+    width: 100%;
+}
+
+.grid-contacto > span {
+    grid-area: titulo;
+    display: block;
+    font-family: var(--fuente-display);
+    font-size: clamp(1.6rem, 3vw, 2.35rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: var(--letras-h2);
+}
+
+.grid-contacto p {
+    grid-area: texto;
+    max-width: 560px;
+    font-size: 1rem;
+    color: var(--letras-parrafos);
+}
+
+.btn-contacto {
+    grid-area: boton;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.85rem;
+    border-radius: var(--radio-pill);
+    background-color: var(--color-acento);
+    color: var(--texto-botones);
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(255, 122, 26, 0.24);
+    white-space: nowrap;
+}
+
+.btn-contacto:hover {
+    background-color: var(--fondo-botones);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FOOTER Y TEXTO GIGANTE DE MARCA
+   ========================================================================== */
+
+.pie-pagina {
+    background-color: var(--color-footer);
+    color: var(--texto-sobre-oscuro);
+    padding-top: 4rem;
+    border-top: 1px solid var(--borde-oscuro);
+    overflow-x: clip;
+}
+
+.pie-brand {
+    display: block;
+    max-width: 1180px;
+    margin: 0 auto 2.5rem;
+    padding: 0 1.5rem;
+    font-family: var(--fuente-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
+    color: var(--baby-blue-suave);
+}
+
+.directorio {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+    border-bottom: 1px solid var(--borde-oscuro);
+}
+
+.directorio section h3 {
+    font-family: var(--fuente-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--baby-blue-suave);
+    margin-bottom: 0.9rem;
+}
+
+.directorio section p {
+    font-size: 0.95rem;
+    color: var(--texto-muted-oscuro);
+    margin-bottom: 0.35rem;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.socials a {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: var(--texto-muted-oscuro);
+    padding: 0.15rem 0;
+}
+
+.socials a:hover {
+    color: var(--color-acento);
+    transform: translateX(4px);
+}
+
+.copyline {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 0.86rem;
+    color: var(--texto-muted-oscuro);
+}
+
+.pie-grande {
+    width: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0 0;
+    line-height: 0.85;
+    user-select: none;
+}
+
+.pie-grande p {
+    font-family: var(--fuente-display);
+    font-size: clamp(3.6rem, 15.5vw, 14.5rem);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.04em;
+    line-height: 0.84;
+    text-align: center;
+    white-space: nowrap;
+    background: linear-gradient(135deg, var(--baby-blue) 0%, #ffffff 48%, var(--color-acento) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .cards-etapas {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+
+    .cta-contacto {
+        padding: 2.25rem 1.75rem;
+    }
+
+    .grid-contacto {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titulo"
+            "texto"
+            "boton";
+        gap: 1rem;
+    }
+
+    .btn-contacto {
+        justify-self: flex-start;
+    }
+
+    .directorio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .barra-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    .menu a {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-botones {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-botones a {
+        width: 100%;
+    }
+
+    .etapas,
+    .contenedor {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .cta-contacto {
+        padding: 1.75rem 1.25rem;
+        border-radius: var(--radio-md);
+    }
+
+    .btn-contacto {
+        width: 100%;
+    }
+
+    .directorio {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .pie-brand,
+    .copyline {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .pie-grande p {
+        font-size: clamp(2.8rem, 15vw, 5.2rem);
+        letter-spacing: -0.03em;
+    }
+}
