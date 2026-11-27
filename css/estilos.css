@@ -334,7 +334,7 @@ ul {
    CARRUSEL HORIZONTAL DE ESPECIALIDADES
    ========================================================================== */
 
-.contenerdo-barra-carrusel {
+.contenedor-barra-carrusel {
     background-color: var(--fondo-oscuro);
     border-top: 1px solid var(--borde-oscuro);
     border-bottom: 1px solid var(--borde-oscuro);
