@@ -919,3 +919,296 @@ ul {
         margin: 0 auto;
     }
 }
+/* ==========================================================================
+   SECCIÓN CONTACTO Y TICKET DE TURNO (contacto.html)
+   ========================================================================== */
+
+.seccion-contacto {
+    padding: 4.5rem 1.5rem 5.5rem;
+    background-color: var(--fondo-principal);
+}
+
+.seccion-contacto h2 {
+    max-width: 860px;
+    margin: 0 auto 2.5rem;
+    font-family: var(--fuente-display);
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--letras-h2);
+    text-align: center;
+}
+
+.seccion-contacto .contenedor {
+    max-width: 860px;
+    padding: 0;
+}
+
+.tarjeta-contacto {
+    background: linear-gradient(145deg, var(--fondo-cards) 0%, var(--baby-blue-suave) 100%);
+    border: 1px solid var(--borde-cards);
+    border-radius: var(--radio-lg);
+    padding: 2.25rem 2.5rem;
+    box-shadow: var(--sombra-elevada);
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    grid-template-areas:
+        "campos ticket"
+        "boton boton";
+    gap: 1.75rem 2.25rem;
+    align-items: stretch;
+}
+
+.campos-contacto {
+    grid-area: campos;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo-grupo label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--indigo-navy);
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 0.82rem 1rem;
+    font-family: var(--fuente-principal);
+    font-size: 0.95rem;
+    color: var(--letras-h1);
+    background-color: var(--fondo-cards);
+    border: 1px solid var(--borde-cards);
+    border-radius: var(--radio-md);
+    outline: none;
+    transition: border-color var(--transicion-base), box-shadow var(--transicion-base), background-color var(--transicion-base);
+}
+
+.campo-grupo input::placeholder,
+.campo-grupo textarea::placeholder {
+    color: var(--letras-secundarias);
+}
+
+.campo-grupo input:hover,
+.campo-grupo select:hover,
+.campo-grupo textarea:hover {
+    border-color: var(--baby-blue);
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    border-color: var(--indigo-navy);
+    box-shadow: 0 0 0 3px rgba(168, 216, 255, 0.45);
+}
+
+/* Diseño personalizado para el combobox (select) */
+.campo-grupo select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.75rem;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2314213d' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+}
+
+.campo-grupo select option {
+    background-color: var(--fondo-cards);
+    color: var(--indigo-navy);
+    font-family: var(--fuente-principal);
+    padding: 0.6rem;
+}
+
+/* Cuadro de texto fijo (sin posibilidad de agrandar) */
+.campo-grupo textarea {
+    resize: none;
+    height: 115px;
+}
+
+/* ==========================================================================
+   TICKET GRÁFICO DE TURNO (DERECHA EN DESKTOP / ARRIBA EN MÓVIL)
+   ========================================================================== */
+
+.ticket-turno {
+    grid-area: ticket;
+    position: relative;
+    background: linear-gradient(165deg, var(--indigo-navy) 0%, #1d356b 60%, #274c9c 100%);
+    color: var(--texto-sobre-oscuro);
+    border-radius: var(--radio-lg);
+    padding: 1.75rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 16px 32px rgba(11, 19, 43, 0.18);
+    overflow: hidden;
+    user-select: none;
+}
+
+.ticket-ranura {
+    width: 54px;
+    height: 10px;
+    border-radius: var(--radio-pill);
+    background-color: var(--baby-blue-suave);
+    margin-bottom: 1rem;
+}
+
+.ticket-cuerpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    margin: auto 0;
+}
+
+.ticket-marca {
+    font-family: var(--fuente-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
+    color: var(--baby-blue);
+}
+
+.ticket-codigo {
+    font-family: var(--fuente-display);
+    font-size: clamp(2.6rem, 4vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+.ticket-estado {
+    margin-top: 0.4rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radio-pill);
+    background-color: rgba(168, 216, 255, 0.16);
+    border: 1px solid rgba(168, 216, 255, 0.35);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--baby-blue);
+}
+
+.ticket-corte {
+    position: relative;
+    width: 100%;
+    border-top: 2px dashed rgba(168, 216, 255, 0.35);
+    margin: 1.25rem 0;
+}
+
+.ticket-corte::before,
+.ticket-corte::after {
+    content: "";
+    position: absolute;
+    top: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--baby-blue-suave);
+}
+
+.ticket-corte::before {
+    left: -25px;
+}
+
+.ticket-corte::after {
+    right: -25px;
+}
+
+.ticket-pie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    font-family: var(--fuente-display);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+}
+
+.ticket-flecha {
+    margin-top: 0.45rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-acento);
+    animation: rebote-ticket 1.8s ease-in-out infinite;
+}
+
+@keyframes rebote-ticket {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+.btn-enviar-contacto {
+    grid-area: boton;
+    width: 100%;
+    max-width: 440px;
+    justify-self: center;
+    padding: 0.95rem 2rem;
+    border: none;
+    border-radius: var(--radio-pill);
+    background-color: var(--fondo-botones);
+    color: var(--texto-botones);
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    transition: background-color var(--transicion-base), transform var(--transicion-base);
+}
+
+.btn-enviar-contacto:hover {
+    background-color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE CONTACTO (EL TICKET PASA ARRIBA DEL FORMULARIO)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .seccion-contacto {
+        padding: 3.5rem 1rem 4.5rem;
+    }
+
+    .tarjeta-contacto {
+        padding: 1.5rem;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "ticket"
+            "campos"
+            "boton";
+        gap: 1.75rem;
+    }
+
+    .ticket-turno {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 1.75rem;
+    }
+
+    .btn-enviar-contacto {
+        max-width: 100%;
+    }
+}
