@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | sifo studio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="barra-nav">
+            <a class="logo" href="index.html">sifo studio</a>
+            <nav class="menu" id="menu" aria-label="Navegacion principal">
+                <a href="index.html">Inicio</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a class="activo" href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="seccion-contacto">
+            <h2>¿Algo en mente? Dale, cuéntanos tu idea</h2>
+
+            <div class="contenedor">
+                <form class="tarjeta-contacto" action="#" method="post">
+
+                    <div class="campos-contacto">
+                        <div class="campo-grupo">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="servicio">Tipo de servicio</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option value="diseno-web">Diseño web</option>
+                                <option value="identidad-visual">Identidad visual</option>
+                                <option value="experiencia-digital">Experiencia digital</option>
+                                <option value="solucion-integral">Solución integral</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="descripcion">Descripción del proyecto</label>
+                            <textarea id="descripcion" name="descripcion" rows="4" placeholder="Cuéntanos sobre tu idea, tiempos o referencias..." required></textarea>
+                        </div>
+                    </div>
+
+                    <aside class="ticket-turno" aria-label="Ticket de atención Sifo Studio">
+                        <div class="ticket-ranura" aria-hidden="true"></div>
+
+                        <div class="ticket-cuerpo">
+                            <span class="ticket-marca">sifo studio</span>
+                            <span class="ticket-codigo">S319</span>
+                            <span class="ticket-estado">DISPONIBLE</span>
+                        </div>
+
+                        <div class="ticket-corte" aria-hidden="true"></div>
+
+                        <div class="ticket-pie">
+                            <span>TU TURNO</span>
+                            <span>CREATIVO</span>
+                            <span class="ticket-flecha" aria-hidden="true">&#9660;</span>
+                        </div>
+                    </aside>
+
+                    <button type="submit" class="btn-enviar-contacto">Hablemos</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <span class="pie-brand">sifo estudio</span>
+        <div class="directorio">
+            <section>
+                <h3>Horario</h3>
+                <p>Lunes a viernes</p>
+                <p>09h00 a 21h00</p>
+            </section>
+
+            <section>
+                <h3>Información</h3>
+                <p>correo@sifo.studio.ec</p>
+                <p>Av. 9 de octubre</p>
+                <p>Guayaquil - Ecuador</p>
+            </section>
+
+            <section>
+                <h3>Síguenos</h3>
+                <ul class="socials">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="copyline">
+            <span>© 2026 SIFO STUDIO. Todos los derechos reservados.</span>
+        </div>
+        <div class="pie-grande">
+            <p>SIFO STUDIO</p>
+        </div>
+    </footer>
+</body>
+</html>
